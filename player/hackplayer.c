@@ -41,7 +41,7 @@ BOOL WINAPI sighandler(int signum)
         do_exit = true;
         return TRUE;
     }
-    return FALSE;
+    return TRUE;
 }
 #else
 static void sighandler(int signum) {
@@ -196,7 +196,7 @@ int main(int argc, char** argv) {
 
     printf("Stop with Ctrl-C\n");
     while( (hackrf_is_streaming(device) == HACKRF_TRUE) && (do_exit == false) ) {
-        // Show something?
+        /J.V.S/ Show something?
     }
 
     result = hackrf_is_streaming(device);
